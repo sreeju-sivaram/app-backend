@@ -1,0 +1,14 @@
+import { Controller, Post, Body } from '@nestjs/common';
+import { RegisterService } from './register.service';
+
+@Controller('/register')
+export class RegisterController {
+  constructor(private readonly registerService: RegisterService) {}
+
+  @Post()
+  async register(@Body() data: object) { 
+    console.log('inside post register', data);
+    return this.registerService.register(data);
+  }
+
+}
