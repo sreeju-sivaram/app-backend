@@ -10,7 +10,6 @@ export class AuthService {
     @InjectModel('RegisterUser') private readonly registerUserModel: Model<RegisterUser>, 
     private readonly jwtService: JwtService){}
   async authenticate(userData) {
-  console.log('inside auth service', userData);
    const user = await this.registerUserModel.findOne({username : userData.username});
 
    if (user && user.password === userData.password) {

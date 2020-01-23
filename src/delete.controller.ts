@@ -6,8 +6,7 @@ export class DeleteController {
   constructor(private readonly deleteService: DeleteService) {}
 
   @Delete()
-  async deleteUser(@Param('id') id) { 
-    console.log('inside post delete username', id);
+  async deleteUser(@Param('id') id) {
     return this.deleteService.deleteUser(id);
   }
 

@@ -7,7 +7,6 @@ import { RegisterUser } from './models/register.user.model'
 export class DeleteService {
     constructor(@InjectModel('RegisterUser') private readonly registerUserModel: Model<RegisterUser>){}
     async deleteUser(id) {
-    console.log('inside delete service', id);
     const response = await this.registerUserModel.remove({_id : id});
     return response;
   }

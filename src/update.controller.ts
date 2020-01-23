@@ -8,7 +8,6 @@ export class UpdateController {
   @Post('update')
   async updateUser(@Param('id') id, @Body() data: object) { 
     const reqObj = {id, ...data}
-    console.log('inside update', id);
     return this.updateService.updateUser(reqObj);
   }
 

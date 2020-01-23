@@ -7,7 +7,6 @@ import { RegisterUser } from './models/register.user.model'
 export class RegisterService {
     constructor(@InjectModel('RegisterUser') private readonly registerUserModel: Model<RegisterUser>){}
     async register(userData) {
-    console.log('inside register service', userData);
     const registerNewUser = new this.registerUserModel(userData);
     await registerNewUser.save();
   }

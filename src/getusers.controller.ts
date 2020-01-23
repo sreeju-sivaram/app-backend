@@ -7,7 +7,6 @@ export class GetUsersController {
 
   @Get()
   getUsers() {
-    console.log('Inside get Users');
     return this.getService.getUsers();
   }
 }

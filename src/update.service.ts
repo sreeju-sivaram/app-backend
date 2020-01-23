@@ -7,7 +7,6 @@ import { RegisterUser } from './models/register.user.model'
 export class UpdateService {
     constructor(@InjectModel('RegisterUser') private readonly registerUserModel: Model<RegisterUser>){}
     async updateUser(user) {
-    console.log('inside update service', user);
     const response = await this.registerUserModel.update({_id : user.id}, {$set: {password: user.password}});
     return response;
   }
