@@ -4,6 +4,8 @@ import { RegisterController } from './register.controller';
 import { AuthService } from './auth.service';
 import { GetUsersController } from './getusers.controller';
 import { GetService } from './getusers.service';
+import { DeleteController } from './delete.controller';
+import { DeleteService } from './delete.service';
 import { RegisterService } from './register.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { registerUserSchema } from './schema/register.user.schema';
@@ -26,7 +28,7 @@ import { jwtConstants } from './constants';
       signOptions: { expiresIn: '60s' },
     }),
   ],
-  controllers: [LoginController, RegisterController, GetUsersController],
-  providers: [AuthService, RegisterService, LocalStrategy, GetService],
+  controllers: [LoginController, RegisterController, GetUsersController, DeleteController],
+  providers: [AuthService, RegisterService, LocalStrategy, GetService, DeleteService],
 })
 export class AppModule {}
