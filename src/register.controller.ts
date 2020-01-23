@@ -6,8 +6,7 @@ export class RegisterController {
   constructor(private readonly registerService: RegisterService) {}
 
   @Post()
-  async register(@Body() data: object) { 
-    console.log('inside post register', data);
+  async register(@Body() data: object) {
     return this.registerService.register(data);
   }
 
